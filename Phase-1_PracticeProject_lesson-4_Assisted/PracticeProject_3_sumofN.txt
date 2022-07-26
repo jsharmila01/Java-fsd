@@ -1,0 +1,17 @@
+
+import java.util.*;
+
+public class sumofN{
+	
+public static void main(String[] args)
+{
+	
+	// Initialise the range
+	int L = 3, R = 6;
+	int arr[] =  {2,3,4,6,5,1,2,3};
+	int sum =0;
+	for(int i= L; i<=R; i++)
+		sum+=arr[i];
+	System.out.println(sum);
+}
+}

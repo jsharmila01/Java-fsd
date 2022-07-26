@@ -1,0 +1,123 @@
+1) THROW
+
+package thorw;
+
+public class ThrowDemo {
+
+	public static void main(String[] args) {
+		ThrowDemo obj = new ThrowDemo();
+		try {
+			int withDrawAmount = 5000;
+			System.out.println("Withdrawing: " + withDrawAmount);
+			obj.withdrawFromATM(withDrawAmount, 400);
+			System.out.println("Amount is Withdrawn");
+		} catch (RuntimeException ex) {
+			System.out.println("Exception was Occurred. " + ex.getMessage());
+		}
+	}
+	
+	void withdrawFromATM(int withDrawAmount, int accountNumber) {
+		int balance = getBalanceFromAccount(accountNumber);
+		if (withDrawAmount > balance) {
+			throw new RuntimeException("Insufficient Funds");
+		}
+	}
+	
+	int getBalanceFromAccount(int accountNumber) {
+		return 6000;
+	}
+}
+
+
+2)CUSTOM EXCEPTION
+
+customtest.java
+
+package custom;
+
+public class customtest {
+
+	public static void main(String[] args) {
+		customtest o = new customtest();
+		try {
+			int withDraw = 500;
+			System.out.println("Withdrawing the amount: " + withDraw);
+			o.withdrawFromATM(withDraw, 100);
+			System.out.println("Amount Withdrawn");
+		} catch (insufficientfundexception ex) {
+			System.out.println("Exception Occurred. " + ex.getMessage());
+		}
+	}
+	
+	void withdrawFromATM(int withDraw, int accountNumber) {
+		int balance = getBalanceFromAccount(accountNumber);
+		if (withDraw > balance) {
+			throw new insufficientfundexception("No fund in account");
+		} 
+	}
+	
+	int getBalanceFromAccount(int accountNumber) {
+		return 1000;
+	}
+}
+
+insufficientfundexception.java
+
+package custom;
+	public class insufficientfundexception extends RuntimeException {
+
+		public insufficientfundexception(String msg) {
+			super(msg);
+		}
+		
+	}
+3)FINALLY
+
+public class ArrayIndexDemo{
+
+	public static void main(String[] args) {
+		try {
+		int[] arr = { 10, 20, 30 };
+		System.out.println("Length of Array: " + arr.length);
+		System.out.println("Elements of the array are: ");
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+		}
+		catch(Exception e) {
+			System.out.println("error occured");
+		}
+		finally {
+		System.out.println("\nElements are Printed");
+		}
+	}
+	
+}
+
+4)THROWS
+
+package ThrowsException;
+
+public class throwsexception {
+
+	void Div() throws ArithmeticException {
+		int a = 9, b = 3, result;
+		result = a / b;
+		System.out.print("The result is : " + result);
+	}
+
+	public static void main(String[] args) {
+		throwsexception T = new throwsexception();
+		try {
+			T.Div();
+		} catch (ArithmeticException e) {
+			System.out.print("Error : " + e.getMessage());
+		}
+		System.out.print("\nEnd of program.");
+	}
+
+}
+
+
+
+

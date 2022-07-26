@@ -1,0 +1,88 @@
+class AccessSp
+{ 
+  void display() 
+     { 
+         System.out.println("default"); 
+     } 
+} 
+
+public class accessSp1 {
+
+	public static void main(String[] args) {
+		System.out.println("This is Default access specifier");
+		AccessSp obj = new AccessSp(); 		  
+        obj.show(); 
+
+	}
+}
+
+class privateaccess
+{ 
+   private void show() 
+    { 
+        System.out.println("private"); 
+    } 
+} 
+
+public class accessSp2 {
+
+	public static void main(String[] args) {
+		System.out.println("This is Private access specifier");
+		privateaccess  obj = new privateaccess(); 
+        //trying to access private 
+        //obj.display();
+
+	}
+}
+
+package sample;
+
+public class protected {
+
+	protected void show() 
+    { 
+        System.out.println("protected access specifier"); 
+    } 
+}
+
+//another package
+package sample1;
+
+import sample1.*;
+
+public class accessSp3 extends protected {
+
+	public static void main(String[] args) {
+		accessSp3 obj = new accessSp3 ();   
+	       obj.show();  
+	}
+
+}
+
+
+
+
+
+package sample3;
+
+public class publicsp {
+
+	public void show() 
+    { 
+        System.out.println("Public access specifier"); 
+    } 
+}
+
+//another package
+package sample4;
+import sample3.*;
+
+public class accessSp4 {
+
+	public static void main(String[] args) {
+		
+		publicsp obj = new publicsp(); 
+        obj.display();  
+		
+	}
+}

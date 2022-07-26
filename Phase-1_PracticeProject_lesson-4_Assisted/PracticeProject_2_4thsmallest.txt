@@ -1,0 +1,11 @@
+import java.util.Arrays;
+
+public class FourthSmallest {
+	
+	public static void main(String[] args)
+	{
+		int arr[] = {10,24,32,47,85,18,66};
+		Arrays.sort(arr);
+		System.out.println("4th smallest element is " + arr[4]);
+	}
+}
