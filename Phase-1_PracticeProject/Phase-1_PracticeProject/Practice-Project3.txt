@@ -1,0 +1,33 @@
+
+public class Methods {
+		int val=5;
+		
+		public void methodmul(int a,int b) {
+			int res1 = a*b;
+			System.out.println("result: " +res1);
+		}
+		
+		public void methodoverload(int b,int h)
+		{
+			System.out.println("Area of triangle: " +(0.5*b*h));
+		}
+		public void method(int r) {
+			System.out.println("Area of circle: " +(3.14*r*r));
+		}
+		
+		
+
+		public static void main(String[] args) {
+			Methods o = new Methods();
+			//method
+			o.methodmul(44, 4);
+			//method overloading
+			o.methodoverload(5, 2);
+			o.method(7);
+			
+			}
+		}
+
+	
+
+

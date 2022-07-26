@@ -1,0 +1,104 @@
+1)try and catch
+class TryCatch {
+  public static void main(String[] args) {
+    try {
+      int divideByZero = 5 / 0;
+      System.out.println("NoException");
+    }
+    catch (ArithmeticException e) {
+      System.out.println("ArithmeticException => " + e.getMessage());
+    }
+  }
+}
+
+
+2)try with multiple catch
+
+public class TryWithMultipleCatch {
+	public static void main(String[] args) {
+		int a=10;
+		int abc[] = {0,20,30,40};
+		try {
+			int result = a/abc[4];
+			//int result = a/abc[0];
+		}
+		catch (ArithmeticException e) {
+			System.out.println("Divide by zero" +e);
+		}
+		catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("Array index" +e);
+		}
+		System.out.println("Bye");
+	}
+}
+
+3)finally block
+
+public class FinallyBlock {
+  public static void main(String[] args) {
+    try {
+      int divideByZero = 5 / 0;
+    }
+
+    catch (ArithmeticException e) {
+      System.out.println("ArithmeticException => " + e);
+    }
+    
+    finally {
+      System.out.println("This is the finally block");
+    }
+  }
+}
+
+4)throw
+
+package sample;
+class MyException extends Exception{
+	MyException(){
+		
+	}
+	MyException(String msg){
+		super(msg);
+	}
+}
+public class ThrowExample {
+	public static void main(String[] args) {
+		int age = 14;
+		try {
+			if(age < 18) {
+				//throw new Exception();  superclass
+				//throw new Exception("Age not eligible");
+				//throw new MyException();
+				throw new MyException("My new Exception");
+
+				}
+			else {
+				System.out.println("eligibile");
+			}
+				
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+}
+
+5)throws
+
+public class ThrowsExample {
+	static void display1() throws Exception { 
+		int a = 10/0;
+		System.out.println("first");   
+	}
+	static void display2() {
+		try {
+		display1();
+		}
+		catch(Exception e) {}
+		System.out.println("second");
+	}
+	public static void main(String[] args) {
+		display2();
+		System.out.println("Main method");
+	}
+
+}

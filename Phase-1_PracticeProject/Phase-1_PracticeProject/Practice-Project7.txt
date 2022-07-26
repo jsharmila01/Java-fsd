@@ -1,0 +1,61 @@
+public class innerclass1 {
+
+	 private String msg="Happy"; 
+	 
+	 class Inner{  
+	  void hello(){
+		System.out.println(msg+", Man");
+}  
+	 }  
+
+
+	public static void main(String[] args) {
+
+		innerclass1 obj=new innerClassAssisted1();
+		innerclass1.Inner obj2=obj.new Inner();  
+		obj2.hello();  
+	}
+}
+
+
+public class innerclass2 {
+
+private String msg="Inner Class Example";
+
+ void display(){  
+	 class Inner{  
+		 void msg(){
+			 System.out.println(msg);
+		 }  
+  }  
+  
+  Inner a=new Inner();  
+  a.msg();  
+ }  
+
+ 
+public static void main(String[] args) {
+	innerclass2  obj =new innerclass2 ();  
+	obj.display();  
+	}
+}
+
+
+//main
+abstract class AnonymousInnerClass {
+	   public abstract void display();
+	}
+
+
+	public class innerclass3 {
+
+	public static void main(String[] args) {
+	AnonymousInnerClass obj = new AnonymousInnerClass() {
+
+	         public void display() {
+	            System.out.println("Anonymous Inner Class");
+	         }
+	      };
+	      obj.display();
+	   }
+	}

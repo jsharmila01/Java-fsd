@@ -1,0 +1,30 @@
+package practice;
+
+public class typecasting {
+
+	public static void main(String[] args) {
+		
+		//implicit
+		int n = 29;
+		float f = n;
+		double d = n;
+		System.out.println("Implicit Typecasting: ");
+		System.out.println("Int Value is " + n);
+		System.out.println("Float Value is " + f);
+		System.out.println("Double Value is " + d);
+		System.out.println(" ");
+
+		//explicit
+		int a = 67;
+		char c = (char)a;
+		byte b = (byte)a;
+		System.out.println("Explicit Typecasting: ");
+		System.out.println("Int value is " +a);
+		System.out.println("Char value is " +c);
+		System.out.println("Byte value is " +b);
+
+
+
+	}
+
+}
