@@ -1,0 +1,105 @@
+//Insertion
+package phase2_lesson2;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.*;
+public class DmlCommands {
+
+	public static void main(String[] args) {
+		try {
+		Scanner sc = new Scanner(System.in);
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		System.out.println("driver loaded successfully");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/javatraining","root","Jayaram@21");
+		PreparedStatement pstmt = con.prepareStatement("insert into employee values(?,?,?)");
+		System.out.println("Enter id : ");
+		int id = sc.nextInt();
+		pstmt.setInt(1, id);
+		System.out.println("Enter name : ");
+		String name = sc.next();
+		pstmt.setString(2, name);
+		System.out.println("Enter salary : ");
+		int salary = sc.nextInt();
+		pstmt.setInt(3, salary);
+		int res = pstmt.executeUpdate();
+		if(res>0) {
+			System.out.println("Insertion successfull");
+		}
+		
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}
+
+//deletion
+package phase2_lesson2;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.*;
+public class DmlCommands {
+
+	public static void main(String[] args) {
+		try {
+		Scanner sc = new Scanner(System.in);
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		System.out.println("driver loaded successfully");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/javatraining","root","Jayaram@21");
+		PreparedStatement pstmt = con.prepareStatement("delete from employee where id = ?");
+		System.out.println("Enter id : ");
+		int id = sc.nextInt();
+		pstmt.setInt(1, id);
+		int res = pstmt.executeUpdate();
+		if(res>0) {
+			System.out.println("Deletion successfull");
+		}
+		else{
+			System.out.println("Failure");
+}
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}
+
+//updation
+package phase2_lesson2;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.*;
+public class DmlCommands {
+
+	public static void main(String[] args) {
+		try {
+		Scanner sc = new Scanner(System.in);
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		System.out.println("driver loaded successfully");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/javatraining","root","Jayaram@21");
+		PreparedStatement pstmt = con.prepareStatement("update employee set salary = ? where id = ?");
+		System.out.println("Enter id : ");
+		int id = sc.nextInt();
+		pstmt.setInt(2, id);
+		System.out.println("Enter salary : ");
+		int salary = sc.nextInt();
+		pstmt.setInt(1, salary);
+		int res = pstmt.executeUpdate();
+		if(res>0) {
+			System.out.println("Update successfull");
+		}
+		else{
+			System.out.println("Failure");
+}
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}
